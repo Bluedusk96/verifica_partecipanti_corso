@@ -23,11 +23,23 @@ class RouteServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(Router $router)
+    
     {
-        //
-
-        parent::boot($router);
+    	//Versione semplice
+    	$router->model('partecipanti',\App\Partecipante::class);
+    	 
+    	
+    	 
+    	// se devo mettere filtri anche su campi diversi da id
+    
+    	$router->bind('partecipanti', function($id) {
+    		return \App\Partecipante::where('id', $id)->firstOrFail();
+    	});
+    			
+    		parent::boot($router);
+    			
     }
+    
 
     /**
      * Define the routes for the application.
@@ -42,3 +54,6 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 }
+
+
+
