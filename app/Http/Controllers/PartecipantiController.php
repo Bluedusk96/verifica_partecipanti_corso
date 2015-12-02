@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Partecipante;
+use App\Http\Requests\PartecipanteRequest;
 
 class PartecipantiController extends Controller
 {
@@ -40,7 +41,7 @@ class PartecipantiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PartecipanteRequest $request)
     {
     	$input = $request->all();
     	$partecipante = Partecipante::create([
@@ -88,10 +89,10 @@ class PartecipantiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ArticleRequest $request, Article $article)
+    public function update(PartecipanteRequest $request, Partecipante $partecipante)
     {
     	$input = $request->all();
-    	$article->update([
+    	$partecipante->update([
     			'name' => $input['name'],
     			'surname' => $input['surname'],
     			'email' => $input['email'],

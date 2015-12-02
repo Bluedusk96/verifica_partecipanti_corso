@@ -25,8 +25,8 @@ class PartecipanteRequest extends Request
     {
     	return [
     			'name' => ['required', 'max:50'],
-    			'surname' => ['required', 'max 25'],
-    			'email' => ['required', 'min:8'],
+    			'surname' => ['required', 'max:25'],
+    			'email' => ['required', 'email', 'min:8'],
     			'telephone' => ['required', 'min:10'],
     	];
     }

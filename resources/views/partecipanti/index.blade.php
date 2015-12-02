@@ -17,7 +17,7 @@ Index
 				<li>{{$partecipante->email}}</li>
 				<li>{{$partecipante->telephone}}</li>
 				
-			<!-- <li>{{$partecipante->id}}</li>  -->
+		<!--        <li>{{$partecipante->id}}</li> -->
 				
 				
 			</ul>
